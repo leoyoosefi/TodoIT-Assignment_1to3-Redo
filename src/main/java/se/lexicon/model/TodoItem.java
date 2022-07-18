@@ -12,6 +12,7 @@ public class TodoItem {
     private boolean done;
     private Person creator;
 
+
     public TodoItem(int id, String title, String taskDescription, LocalDate deadLine, boolean done, Person creator) {
         this(title,taskDescription,deadLine,done,creator);
         this.id = id;

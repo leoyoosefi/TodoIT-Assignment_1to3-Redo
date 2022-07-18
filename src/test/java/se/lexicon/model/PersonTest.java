@@ -29,6 +29,7 @@ public class PersonTest {
         Assertions.assertEquals("Leo", testObject.getFirstName());
     }
 
+
     @Test
     public void equal_successful(){
         Person expectedResult = new Person("Leo", "Yoosefi", "leoyoosefi@gmail.com");

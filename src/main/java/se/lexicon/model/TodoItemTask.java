@@ -9,6 +9,7 @@ public class TodoItemTask {
     private TodoItem todoItem;
     private Person assignee;
 
+
     public TodoItemTask(int id, TodoItem todoItem, Person assignee) {
         this(todoItem, assignee);
         this.id = id;
