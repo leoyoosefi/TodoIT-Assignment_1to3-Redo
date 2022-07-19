@@ -15,5 +15,8 @@ public interface Validation {
     BiConsumer<String, String> checkMaxLength20 = (value, paramName) -> {
         if(value.length()<20) throw new IllegalArgumentException(paramName + "max length is not valid");
     };
+    BiConsumer<String, String> checkMinLength3 = (value, paramName) -> {
+        if(value.length()<3) throw new IllegalArgumentException(paramName + "minimum length is not valid");
+    };
 
 }

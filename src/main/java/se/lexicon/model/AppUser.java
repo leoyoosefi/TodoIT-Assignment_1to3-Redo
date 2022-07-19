@@ -11,9 +11,9 @@ public class AppUser {
     private AppRole role;
 
     public AppUser(String username, String password, AppRole role) {
-        this.username = username;
-        this.password = password;
-        this.role = role;
+        setUsername(username);
+        setPassword(password);
+        setRole(role);
     }
 
     public String getUsername() {
@@ -30,6 +30,7 @@ public class AppUser {
     }
 
     public void setPassword(String password) {
+        Validation.checkStringNotNull.andThen(Validation.checkNotEmpty).andThen(Validation.checkMinLength3).accept(password, "Password");
         this.password = password;
     }
 
@@ -46,12 +47,12 @@ public class AppUser {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AppUser appUser = (AppUser) o;
-        return Objects.equals(username, appUser.username) && Objects.equals(password, appUser.password) && role == appUser.role;
+        return Objects.equals(username, appUser.username) && role == appUser.role;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, password, role);
+        return Objects.hash(username, role);
     }
 
     @Override
