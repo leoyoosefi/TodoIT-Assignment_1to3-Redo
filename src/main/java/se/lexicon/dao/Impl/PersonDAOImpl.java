@@ -17,6 +17,8 @@ public class PersonDAOImpl {
 
     @Override
     public Person persist(Person person) {
+
+    }
         if (person == null) throw new IllegalArgumentException("Person is null");
         if (findByEmail(person.getEmail()) != null)
             throw new IllegalArgumentException("Email" + person.getEmail() + " is already taken");

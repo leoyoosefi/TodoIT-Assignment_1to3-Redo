@@ -40,6 +40,7 @@ public class AppUserDAOImpl {
 
     @Override
     public void remove(String username) {
+
         AppUser findUser = findByUsername(username);
         if (findUser != null) appUsers.remove(findUser);
     }
